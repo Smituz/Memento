@@ -1,0 +1,70 @@
+﻿@model MeriDiaryv2.ViewModels.ProfileViewModel
+
+@{
+    ViewData["Title"] = "Edit Profile Page";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Ensure your layout includes the navbar
+}
+
+<div class="edit-profile-container">
+    <div class="edit-profile-text-section">
+        <h1>Edit Profile</h1>
+    </div>
+    <div class="edit-profile-info-section">
+        <form asp-action="SaveProfile" method="post">
+            <div>
+                <label for="FirstName">First Name:</label>
+                <input type="text" id="FirstName" name="FirstName" value="@Model.FirstName" required />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div>
+                <label for="LastName">Last Name:</label>
+                <input type="text" id="LastName" name="LastName" value="@Model.LastName" required />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div>
+                <label for="Email">Email:</label>
+                <input type="email" id="Email" name="Email" value="@Model.Email" required />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div>
+                <label for="PhoneNumber">Phone No:</label>
+                <input type="text" id="PhoneNumber" name="PhoneNumber" value="@Model.PhoneNumber" required />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div>
+                <label for="Birthdate">Birthdate:</label>
+                <input type="date" id="Birthdate" name="Birthdate" value="@Model.Birthdate.ToString("yyyy-MM-dd")" required />
+                <span asp-validation-for="Birthdate" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    /* Your existing CSS styling */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #e8dfd3;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .edit-profile-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .edit-profile-text-section {
+        margin-bottom: 20px;
+    }
+
+    .edit-profile-info-section {
+        width: 50%;
+    }
+
+        .edit-profile-info-section div {
+            margin-bottom: 15px;
+        }
+</style>

@@ -1,0 +1,113 @@
+﻿@{
+    ViewData["Title"] = "MeriDiary - Your Personal Diary Application";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(../images/bg.jpg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .content {
+            flex: 1;
+            text-align: left;
+        }
+        .header {
+            font-size: 14px;
+            color: #888888;
+            margin-bottom: 10px;
+        }
+        .title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #333333;
+            margin: 0;
+        }
+        .description {
+            font-size: 18px;
+            color: #666666;
+            margin: 20px 0;
+        }
+        .buttons {
+            margin: 20px 0;
+        }
+        .button {
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        .button-primary {
+            background-color: #4a90e2;
+            color: #ffffff;
+        }
+        .button-secondary {
+            background-color: #ffffff;
+            color: #333333;
+            border: 1px solid #cccccc;
+        }
+        .image-container {
+            flex: 1;
+            text-align: right;
+        }
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .logo {
+            margin: 0 10px;
+            font-size: 18px;
+            color: #888888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+           
+            <div class="title">
+                MeriDiary<br>The best way to keep your personal diary.
+            </div>
+            <div class="description">
+               Log your memories and relive it anytime in the future from anycorner in the world.
+            </div>
+            <div class="buttons">
+                <a class="button button-primary" href="@Url.Action("Login", "User")">
+                    Login
+                </a>
+                <a class="button button-secondary" href="@Url.Action("Signup", "User")">
+                    Signup
+                </a>
+            </div>
+        </div>
+        <div class="image-container">
+            <img alt="Illustration of a diary with a pen and some decorative elements" height="300" src="https://storage.googleapis.com/a1aa/image/mvZJMYCvhjZ0FlnRVZt4C6iyslajej5lKWNjSRkXN0eHhmnTA.jpg" width="400" />
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+﻿@model MeriDiaryv2.ViewModels.NewDiaryEntryViewModel
+
+@{
+    ViewData["Title"] = "Log Your Memory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="form-box shadow-lg p-5 rounded">
+        <h2 class="text-center mb-4">Log Your Memory</h2>
+
+        <form asp-action="CreateEntry" asp-controller="DiaryEntries" method="post">
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label"></label>
+                <input asp-for="Title" class="form-control" placeholder="Enter your title" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Content" class="form-label"></label>
+                <textarea asp-for="Content" class="form-control" rows="5" placeholder="Write your thoughts..."></textarea>
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Mood" class="form-label"></label>
+                <select asp-for="Mood" class="form-select">
+                    <option value="" disabled selected>Select your mood</option>
+                    <option value="Fear">Fear</option>
+                    <option value="Sadness">Sadness</option>
+                    <option value="Disgust">Disgust</option>
+                    <option value="Anxiety">Anxiety</option>
+                    <option value="Happiness">Happiness</option>
+                    <option value="Calmness">Calmness</option>
+                    <option value="Excitement">Excitement</option>
+                    <option value="Surprise">Surprise</option>
+                </select>
+                <span asp-validation-for="Mood" class="text-danger"></span>
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="gradient-button">Save Entry</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<style>
+    body {
+        background: url('../images/newentry.jpg') no-repeat center center fixed;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+    }
+
+    .form-box {
+        background-color: white;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .gradient-button {
+        background: linear-gradient(90deg, #a100ff, #00d2ff);
+        border: none;
+        border-radius: 12px;
+        color: white;
+        padding: 10px 24px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+
+        .gradient-button:hover {
+            transform: scale(1.05);
+        }
+</style>

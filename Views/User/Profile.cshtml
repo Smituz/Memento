@@ -1,0 +1,83 @@
+﻿@model MeriDiaryv2.Models.User
+
+@{
+    ViewData["Title"] = "Profile Page";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Ensure your layout includes the navbar
+}
+
+<div class="profile-container">
+    <div class="profile-text-section">
+        <h1>Hello</h1>
+        <h2>@Model.FirstName @Model.LastName</h2>
+        <br />
+        <br />
+        <p style="font-size: 20px; font-weight: bold;">Your total Diary Entries: <strong>@ViewBag.TotalDiaryEntries</strong></p>
+    </div>
+    <div class="profile-info-section">
+        <h3>Personal Information:</h3>
+        <p>Email: @Model.Email</p>
+        <p>Phone No: @Model.PhoneNo</p>
+        <p>Birthdate: @Model.BirthDate.ToShortDateString()</p>
+        <a href="@Url.Action("EditProfile", "User")" class="btn btn-primary mt-3">Edit Profile</a> <!-- Edit button -->
+    </div>
+</div>
+
+<style>
+    body{
+        background-color: #e8dfd3;
+    }
+    .profile-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto; /* Center the container */
+        height: calc(100vh - 100px); /* Adjust for navbar height */
+        background-color: #e8dfd3; /* Retain background color */
+        padding: 20px; /* Optional padding for aesthetics */
+    }
+
+    .profile-text-section {
+        max-width: 50%;
+    }
+
+        .profile-text-section h1 {
+            font-size: 96px;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .profile-text-section h2 {
+            font-size: 96px;
+            margin: 10px 0;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+    .profile-info-section {
+        max-width: 50%;
+    }
+
+        .profile-info-section h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .profile-info-section p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+    .btn {
+        padding: 10px 20px; /* Adjust padding for the button */
+        font-size: 18px; /* Increase button font size */
+        text-decoration: none; /* Remove underline from the link */
+        color: #fff; /* Text color */
+        background-color: #007bff; /* Button color */
+        border-radius: 5px; /* Rounded corners */
+    }
+
+        .btn:hover {
+            background-color: #0056b3; /* Darker button color on hover */
+        }
+</style>

@@ -1,0 +1,150 @@
+﻿@model MeriDiaryv2.ViewModels.SingupViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .left {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .right {
+            width: 50%;
+            background: url('https://placehold.co/600x800') no-repeat center center;
+            background-size: cover;
+        }
+
+        .form-container {
+            width: 80%;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1A1A1A;
+            text-align: center;
+        }
+
+        p {
+            font-size: 14px;
+            color: #6B6B6B;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+            .form-group label {
+                display: block;
+                font-size: 14px;
+                font-weight: 600;
+                color: #1A1A1A;
+                margin-bottom: 5px;
+            }
+
+            .form-group input {
+                width: 100%;
+                padding: 10px;
+                font-size: 14px;
+                border: 1px solid #E0E0E0;
+                border-radius: 5px;
+            }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            background-color: #4A00E0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .register {
+            text-align: center;
+            font-size: 14px;
+            color: #6B6B6B;
+        }
+
+            .register a {
+                color: #4A00E0;
+                text-decoration: none;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="form-container">
+                <h1>Create an account</h1>
+                <p>Enter your details to sign up.</p>
+                <form asp-action="Signup" method="post">
+                    <div class="form-group">
+                        <label asp-for="FirstName">First Name *</label>
+                        <input id="first-name" asp-for="FirstName" placeholder="Enter your first name" type="text" required />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LastName">Last Name *</label>
+                        <input id="last-name" asp-for="LastName" placeholder="Enter your last name" type="text" required />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email">Email *</label>
+                        <input id="email" asp-for="Email" placeholder="Enter your email address" type="email" required />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password">Password *</label>
+                        <input id="password" asp-for="Password" placeholder="Enter password" type="password" required />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ConfirmPassword">Confirm Password *</label>
+                        <input id="confirm-password" asp-for="ConfirmPassword" placeholder="Confirm password" type="password" required />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PhoneNo">Phone No. *</label>
+                        <input id="phone" asp-for="PhoneNo" placeholder="Enter your phone number" type="tel" required />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Birthdate">Birthdate *</label>
+                        <input id="birthdate" asp-for="Birthdate" type="date" required />
+                    </div>
+                    <button class="btn" type="submit">Sign Up</button>
+                </form>
+
+                <div class="register">
+                    Already have an account?
+                    <a href="/User/Login">Log in here</a>
+                </div>
+            </div>
+        </div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

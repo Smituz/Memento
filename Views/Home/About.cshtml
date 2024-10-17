@@ -1,0 +1,104 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Use the layout without breaking it
+}
+
+<div class="about-wrapper">
+    <div class="about-container">
+        <div class="about-left-section">
+            <h1>ABOUT<br />US</h1>
+            <p>
+                MeriDiaryv2 is a personal diary management system that allows users to log memories,
+                track their mood, manage goals, and record expenses.
+            </p>
+            <p>
+                Developed using ASP.NET Core MVC for the backend, Entity Framework Core for database
+                management, and Bootstrap for responsive design. The project utilizes Session Management
+                and SQL Server as the database engine.
+            </p>
+        </div>
+
+        <div class="about-right-section">
+            <h2>Our Vision</h2>
+            <p>
+                MeriDiaryv2 aims to empower users by helping them reflect on their daily lives,
+                track goals, and visualize mood patterns over time.
+            </p>
+
+            <div class="about-developers">
+                <h2>Meet the Developers</h2>
+                <div class="about-developer">
+                    <strong>Smit Bhansali</strong>
+                    <a href="mailto:smitbhansali0308@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="https://github.com/Smituz" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+                <div class="about-developer">
+                    <strong>Saif Huseni</strong>
+                    <a href="mailto:saif@example.com"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="https://github.com/saifhuseni" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .about-wrapper {
+        padding: 60px 15px; /* Adds spacing to avoid conflicts with navbar */
+        background-color: #fff;
+    }
+
+    .about-container {
+        display: flex;
+        flex-wrap: wrap; /* Ensure content wraps on smaller screens */
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto; /* Center content */
+    }
+
+    .about-left-section {
+        flex: 1;
+        min-width: 300px;
+        margin-right: 20px;
+    }
+
+        .about-left-section h1 {
+            font-size: 80px;
+            margin: 0;
+            line-height: 0.9;
+        }
+
+        .about-left-section p {
+            font-size: 18px;
+            margin: 15px 0;
+        }
+
+    .about-right-section {
+        flex: 1;
+        min-width: 300px;
+    }
+
+        .about-right-section h2 {
+            font-size: 28px;
+            margin: 20px 0 10px;
+        }
+
+        .about-right-section p {
+            font-size: 18px;
+        }
+
+    .about-developers {
+        margin-top: 20px;
+    }
+
+    .about-developer {
+        margin-bottom: 10px;
+    }
+
+        .about-developer a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: #3498db;
+        }
+</style>

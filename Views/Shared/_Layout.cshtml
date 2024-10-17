@@ -1,0 +1,100 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MeriDiaryv2</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fef7f4;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fef7f4;
+        }
+
+            .navbar img {
+                height: 40px;
+            }
+
+            .navbar .logo {
+                display: flex;
+                align-items: center;
+                margin-right: auto;
+            }
+
+                .navbar .logo img {
+                    margin-right: 10px;
+                }
+
+                .navbar .logo span {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: #000;
+                }
+
+                    .navbar .logo span.subtext {
+                        font-size: 12px;
+                        font-weight: normal;
+                        color: #000;
+                    }
+
+            .navbar a {
+                text-decoration: none;
+                color: #000;
+                margin: 0 15px;
+                font-size: 16px;
+                background-color: #5ec4c1;
+                border: 2px solid #000;
+                border-radius: 25px;
+                padding: 10px 20px;
+                display: flex;
+                align-items: center;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img alt="Diary Icon" src="https://storage.googleapis.com/a1aa/image/FnfZSyhXELXdVCPjv6Rs21hfieUNUX6PmaoNlhs8dUfeiF9cC.jpg" width="40" height="40" />
+                <div>
+                    <span>Meri Diary</span><br />
+                    <span class="subtext">Your Buddy</span>
+                </div>
+            </div>
+
+            <a asp-area="" asp-controller="DiaryEntries" asp-action="Index">My Entries</a>
+            <a asp-area="" asp-controller="Goals" asp-action="Index">My Goals</a>
+            <a asp-area="" asp-controller="User" asp-action="Profile">Profile</a>
+            <a asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
+            <a asp-area="" asp-controller="Home" asp-action="About">About Us</a>
+        </div>
+    </header>
+
+    <div class="container mt-4">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

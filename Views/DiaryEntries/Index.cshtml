@@ -1,0 +1,115 @@
+﻿@{
+    ViewData["Title"] = "My Diary Entries";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var diaryEntries = Model; // Assuming we pass the list of DiaryEntryViewModel objects to the view
+}
+
+<div class="container text-center mt-5">
+    <h1 style="color: white; font-weight: bold;">Welcome to MeriDiary</h1>
+    <p style="color: white; font-weight: bold;">Log your memories and keep track of your thoughts every day!</p>
+
+    <button class="gradient-button"
+            onclick="location.href='@Url.Action("NewEntry", "DiaryEntries")'">
+        Add a Diary Entry
+    </button>
+</div>
+
+@if (diaryEntries.Count == 0)
+{
+    <div class="text-center mt-5">
+        <p class="text-muted">What are you thinking? Add Your First Entry Now.</p>
+    </div>
+}
+else
+{
+    <div class="container mt-5">
+        <div class="row">
+            @foreach (var entry in diaryEntries)
+            {
+                <div class="col-md-4 mb-4">
+                    <!-- Adjusted column size -->
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">@entry.Title</h5>
+                            <p class="card-text text-muted">
+                                Mood: @entry.Mood <br />
+                                Created on: @entry.CreatedAt.ToString("MMMM dd, yyyy")
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent text-end">
+                            <button class="btn btn-link" onclick="location.href='@Url.Action("EditEntry", "DiaryEntries", new { id = entry.Id })'">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 1 2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script>
+        // Optional: Add any additional JavaScript if needed
+    </script>
+}
+
+<style>
+    body {
+        background: url('../images/Indexbg2.jpeg') no-repeat center center fixed;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+    }
+
+    .gradient-button {
+        background: linear-gradient(90deg, #a100ff, #00d2ff);
+        border: none;
+        border-radius: 12px;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+
+        .gradient-button:hover {
+            transform: scale(1.05);
+        }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .card {
+        /* Removed width and height properties for responsive behavior */
+        padding: 20px; /* Maintain padding for spacing */
+        background-color: #ffffff; /* Card background color */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+        transition: transform 0.2s; /* Add a smooth hover effect */
+    }
+
+        .card:hover {
+            transform: scale(1.05); /* Scale effect on hover */
+        }
+
+    .card-footer button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+        .card-footer button:hover {
+            color: #a100ff;
+        }
+</style>

@@ -1,0 +1,76 @@
+﻿@model MeriDiaryv2.ViewModels.NewDiaryEntryViewModel
+
+@{
+    ViewData["Title"] = "Edit Diary Entry";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="form-box shadow-lg p-5 rounded">
+        <h2 class="text-center mb-4">Edit Diary Entry</h2>
+
+        <form asp-action="SaveEntry" asp-controller="DiaryEntries" method="post">
+            <input type="hidden" asp-for="Id" /> <!-- Hidden field for the entry ID -->
+
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label"></label>
+                <input asp-for="Title" class="form-control" placeholder="Enter your title" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Content" class="form-label"></label>
+                <textarea asp-for="Content" class="form-control" rows="8" placeholder="Write your thoughts..." style="resize: vertical;"></textarea>
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Mood" class="form-label"></label>
+                <select asp-for="Mood" class="form-select">
+                    <option value="" disabled>Select your mood</option>
+                    <option value="Fear">Fear</option>
+                    <option value="Sadness">Sadness</option>
+                    <option value="Disgust">Disgust</option>
+                    <option value="Anxiety">Anxiety</option>
+                    <option value="Happiness">Happiness</option>
+                    <option value="Calmness">Calmness</option>
+                    <option value="Excitement">Excitement</option>
+                    <option value="Surprise">Surprise</option>
+                </select>
+                <span asp-validation-for="Mood" class="text-danger"></span>
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="gradient-button">Save Entry</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<style>
+    body{
+      background:url('../images/edit.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+    .form-box {
+        max-width: 600px; /* Make the form wider */
+        width: 100%; /* Ensure it takes full width within max-width */
+    }
+
+    /* Optionally style the textarea to make it larger */
+    .form-control {
+        height: auto; /* Allow textarea to adjust height */
+        font-size: 16px; /* Increase font size for better readability */
+    }
+
+    /* Make the button slightly larger */
+    .gradient-button {
+        padding: 12px 24px; /* Adjust padding for better button size */
+        font-size: 16px; /* Increase font size for better readability */
+    }
+</style>
