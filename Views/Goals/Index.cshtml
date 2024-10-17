@@ -1,0 +1,105 @@
+﻿@model IEnumerable<MeriDiaryv2.ViewModels.AddGoalViewModel>
+@{
+    ViewData["Title"] = "Goals";
+    Layout = "_Layout"; // Make sure this matches your layout file
+}
+
+<style>
+    body {
+        background: url('../images/goals.jpeg');
+    }
+
+    .container {
+        width: 80%;
+        background-color: #2E2236;
+        padding: 20px;
+        border-radius: 10px;
+        margin: auto; /* Center the container */
+    }
+
+    .task {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #3A2A4E;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+        .task input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+        }
+
+        .task label {
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            flex-grow: 1;
+        }
+
+        .task .due-date {
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+    .add-goal {
+        margin-bottom: 20px;
+        text-align: right;
+    }
+
+        .add-goal button {
+            background-color: #673AB7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .add-goal button:hover {
+                background-color: #5E35B1;
+            }
+
+    .no-goals-message {
+        text-align: center;
+        font-size: 24px;
+        color: #673AB7;
+        font-family: Arial, sans-serif;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="container">
+    <h1 style="color: white; font-weight: bold;">Your Goals</h1>
+    <h3 style="color: white; font-weight: bold;">Go out there and achieve them!!!</h3>
+    <div class="add-goal">
+        <a asp-controller="Goals" asp-action="AddGoal">
+            <button>Add a Goal</button>
+        </a>
+    </div>
+
+    @if (Model.Any())
+    {
+        @foreach (var goal in Model)
+        {
+            <div class="task">
+                <input type="checkbox"
+                       asp-for="@goal.Completed"
+                       onchange="this.form.submit()" />
+                <label>@goal.Title</label>
+                <span class="due-date">Achieve by @goal.Deadline.ToShortDateString()</span>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="no-goals-message">
+            Manifest some goals right now!!!
+        </div>
+    }
+</div>

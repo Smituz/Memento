@@ -1,0 +1,81 @@
+﻿@model MeriDiaryv2.ViewModels.AddGoalViewModel
+@{
+    ViewData["Title"] = "Add Goal";
+    Layout = "_Layout"; // Ensure this matches your layout file
+}
+
+<style>
+    body{
+        background : url('../images/newgoal4.jpeg');
+    }
+
+    .container {
+        width: 80%;
+        background-color: #2E2236;
+        padding: 20px;
+        border-radius: 10px;
+        margin: auto; /* Center the container */
+    }
+
+    h2 {
+        text-align: center;
+        color: #673AB7;
+        font-family: Arial, sans-serif;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        color: #FFFFFF;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+    }
+
+    input[type="text"], input[type="date"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #CCCCCC;
+    }
+
+    .submit-button {
+        display: block;
+        width: 100%;
+        background-color: #673AB7;
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+        .submit-button:hover {
+            background-color: #5E35B1;
+        }
+</style>
+
+<div class="container">
+    <h2>Plan your Goals Now.</h2>
+
+    <form asp-action="AddGoal" method="post">
+        <div class="form-group">
+            <label asp-for="Title"></label>
+            <input type="text" asp-for="Title" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Deadline"></label>
+            <input type="date" asp-for="Deadline" />
+            <span asp-validation-for="Deadline" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="submit-button">I will achieve this</button>
+    </form>
+</div>

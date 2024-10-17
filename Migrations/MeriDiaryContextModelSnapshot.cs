@@ -65,6 +65,9 @@ namespace MeriDiaryv2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<bool>("Completed")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("Deadline")
                         .HasColumnType("datetime2");
 

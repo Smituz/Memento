@@ -56,7 +56,6 @@ public class DiaryEntriesController : Controller
             {
                 Title = entryViewModel.Title,
                 Content = entryViewModel.Content,
-                Mood = entryViewModel.Mood,
                 UserId = int.Parse(HttpContext.Session.GetString("UserId")), // Assuming UserId is an int
                 CreatedAt = DateTime.Now // Assuming you want to set the current date/time
             };
