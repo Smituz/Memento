@@ -20,17 +20,6 @@
 - **User Profiles**: View and edit personal profile information.
 - **Search and Sort**: Easily navigate through diary entries and goals.
 
-## Screenshots
-Here are a few glimpses of the *Memento* application:
-
-### Home Page
-![Home Page]()
-
-###  Add Diary Entries
-![Diary Entries]()
-
-### Add New Goal
-![Add New Goal]()
 
 ## Prerequisites
 To run the *Memento* application on your local machine, you will need the following installed:
