@@ -1,6 +1,6 @@
-# MeriDiary
+# Memento
 
-**MeriDiary** is a user-friendly ASP.NET Core MVC application designed to help users manage their diary entries and set personal goals. This application allows users to create, edit, and delete diary entries, as well as add and track goals. Developed using .NET Core MVC, it provides a seamless experience for organizing thoughts and aspirations.
+**Memento** is a user-friendly ASP.NET Core MVC application designed to help users manage their diary entries and set personal goals. This application allows users to create, edit, and delete diary entries, as well as add and track goals. Developed using .NET Core MVC, it provides a seamless experience for organizing thoughts and aspirations.
 
 ## Table of Contents
 - [Overview](#overview)
@@ -11,7 +11,7 @@
 - [Contributors](#contributors)
 
 ## Overview
-**MeriDiary** simplifies personal reflection and goal management by providing a streamlined interface for users to maintain their diary and track their goals. Built on ASP.NET Core MVC with Entity Framework for database interactions, it ensures a smooth experience for users to document their thoughts and ambitions.
+**Memento** simplifies personal reflection and goal management by providing a streamlined interface for users to maintain their diary and track their goals. Built on ASP.NET Core MVC with Entity Framework for database interactions, it ensures a smooth experience for users to document their thoughts and ambitions.
 
 ## Features
 - **Diary Entries**: Create, edit, and delete diary entries with titles, content, and timestamps.
@@ -21,7 +21,7 @@
 - **Search and Sort**: Easily navigate through diary entries and goals.
 
 ## Screenshots
-Here are a few glimpses of the *MeriDiary* application:
+Here are a few glimpses of the *Memento* application:
 
 ### Home Page
 ![Home Page]()
@@ -33,7 +33,7 @@ Here are a few glimpses of the *MeriDiary* application:
 ![Add New Goal]()
 
 ## Prerequisites
-To run the *MeriDiary* application on your local machine, you will need the following installed:
+To run the *Memento* application on your local machine, you will need the following installed:
 
 - [Visual Studio 2022](https://visualstudio.microsoft.com/)
 - [.NET Core SDK 6.0](https://dotnet.microsoft.com/download/dotnet/6.0)
@@ -41,22 +41,22 @@ To run the *MeriDiary* application on your local machine, you will need the foll
 - [ADO.NET](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-overview)
 
 ## Setup Instructions
-Follow these steps to get *MeriDiary* up and running on your machine:
+Follow these steps to get *Memento* up and running on your machine:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/Smituz/MeriDiaryMVC.git
-    cd MeriDiary
+    git clone https://github.com/Smituz/MementoMVC.git
+    cd Memento
     ```
 
 2. **Open the solution in Visual Studio**:
-    - Open `MeriDiaryv2.sln` in Visual Studio.
+    - Open `Mementov2.sln` in Visual Studio.
 
 3. **Configure Database Connection**:
     - Update the `appsettings.json` file with your SQL Server credentials:
       ```json
       "ConnectionStrings": {
-        "DefaultConnection": "Server=your_server_name;Database=MeriDiaryDB;Trusted_Connection=True;MultipleActiveResultSets=true"
+        "DefaultConnection": "Server=your_server_name;Database=MementoDB;Trusted_Connection=True;MultipleActiveResultSets=true"
       }
       ```
 
